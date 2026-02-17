@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Enrollment Form</title>
+</head>
+<body>
+    <header>
+    <h1>Online Learning Platform</h1>
+    <p>Course Enrollment Form</p>
+</header>
+<main>
+    <section>
+        <h2>Enrollment Progress</h2>
+        <progress value="60" max="100"></progress>
+        <p>60% Completed</p>
+    </section>
+    <hr>
+     <section>
+        <h2>Fill Your Details</h2>
+
+        <form action="#" method="post">
+
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name" required minlength="3"><br><br>
+
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="dob">Date Of Birth:</label><br>
+                <input type="date" name="DOB" id="dob"> <br><br>
+
+            </fieldset>
+            <fieldset>
+                <legend>Course Selection</legend>
+
+                <label for="course">Choose Course:</label><br>
+                <input list="courses" id="course" name="course" required>
+
+                <datalist id="courses">
+                    <option value="Full Stack Development">
+                    <option value="Java Programming">
+                    <option value="Data Science">
+                    <option value="Machine Learning">
+                    <option value="Cyber Security">
+                </datalist>
+                <br><br>
+                 <label for="skill">Skill Level (Beginner–Advanced):</label><br>
+                <meter value="2" min="0" max="5">2 out of 5</meter>
+                <br><br>
+
+                <label for="interest">Interest Level:</label><br>
+                <input type="range" id="interest" name="interest" min="1" max="10"><br><br>
+
+            </fieldset>
+            <section>
+                <button type="submit">Enroll Now</button>
+                <button type="reset">Reset</button>
+            </section>
+        </form>
+    </section>
+</main>
+<hr>
+<footer>
+    <p>&copy; 2026 Online Learning Platform</p>
+</footer>
+</body>
+</html>
