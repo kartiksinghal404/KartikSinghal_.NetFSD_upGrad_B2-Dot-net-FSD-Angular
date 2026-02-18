@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog Layout</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+                font-family: Arial, sans-serif;
+                background: #f4f7fb;
+                line-height: 1.6;
+        }
+        header{
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+        .container {
+                        padding: 30px;
+        }
+
+        .blog-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 20px;
+        
+       }
+       .card {
+                 background: white;
+                padding: 20px;
+                border-radius: 12px;
+                border: 1px solid #ddd;
+                transition: 0.3s;
+        }
+        .card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.card h2 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+.card p {
+    margin-bottom: 15px;
+    color: #555;
+}
+.card button {
+    padding: 10px 15px;
+    border: none;
+    background: #3498db;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.card button:hover {
+    background: #217dbb;
+}
+footer{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+    font-size:14px;
+}
+    </style>
+</head>
+<body>
+    <header>StackTrail 🧭</header>
+    <div class="container">
+    <div class="blog-grid">
+
+        <div class="card">
+            <h2>Data Analytics Tips</h2>
+            <p>Always clean and validate your data before analysis, because accurate insights depend more on data quality than complex algorithms.</p>
+            <a href="https://www.geeksforgeeks.org/data-analysis/data-analysis-tutorial/"><button>Read More</button></a>
+        </div>
+    <div class="card">
+            <h2>Java Programming</h2>
+            <p>Understand core Java concepts with real-world examples.</p>
+            <a href="https://www.geeksforgeeks.org/java/java/"><button>Read More</button></a>
+    </div>
+    <div class="card">
+            <h2>UI/UX Design Basics</h2>
+            <p>Improve user experience with simple design principles.</p>
+            <a href="https://www.geeksforgeeks.org/techtips/principles-of-ui-ux-design/"><button>Read More</button></a>
+    </div>
+    <div class="card">
+            <h2>Full Stack Guide</h2>
+            <p>A complete roadmap to become a professional full stack developer.</p>
+            <a href="https://www.geeksforgeeks.org/blogs/what-is-full-stack-development/"><button>Read More</button></a>
+    </div>
+    <div class="card">
+            <h2>Career Growth Tips</h2>
+            <p>Strategies to grow faster in tech industry and crack MNC jobs.</p>
+            <a href="https://www.geeksforgeeks.org/blogs/tips-for-choosing-your-career-path/"><button>Read More</button></a>
+    </div>
+        </div>
+</div>
+<footer>
+    <p>&copy 2026 Kartik Singhal | All Rights Reserved</p>
+</footer>
+</body>
+</html>

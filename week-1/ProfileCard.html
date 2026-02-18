@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile Card</title>
+    <style>
+        body{
+            background-color:#f2f2f2;
+            font-family: Arial, Helvetica, sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+        }
+        .card{
+            background-color: blanchedalmond;
+            width:300px;
+            padding:25px;                /* padding inside card */
+            border:2px solid #ddd;       /* border */
+            border-radius:15px;          /* rounded corners */
+            margin:60px;                 /* margin outside */
+            text-align:center;
+            box-shadow:0 4px 12px rgba(0,0,0,0.1);
+        }
+        .card h2{
+            margin-bottom:5px;
+            font-size:26px;
+            font-weight:bold;
+            letter-spacing:1px;          /* typography */
+        }
+
+        .role{
+            color:#777;
+            font-size:18px;
+            margin-bottom:15px;
+            text-decoration:underline;
+        }
+
+        .bio{  
+            font-size:15px;
+            line-height:1.6;             /* typography */
+            margin-bottom:20px;
+        }
+
+        .btn{
+            display:inline-block;
+            padding:10px 20px;
+            background-color:#4CAF50;
+            color:white;
+            text-decoration:none;
+            font-size:16px;
+            font-weight:bold;
+            border-radius:8px;
+            transition:0.3s;
+        }
+        .btn:hover{
+            background-color:#2e7d32;    /* hover effect */
+            transform:scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="images/profileCardImage.jpg" alt="" width="50%" height="50%">
+    <h2>Kartik Singhal</h2>
+    <div class="role">Full Stack Developer</div>
+    <p class="bio">
+        Passionate developer skilled in Java, HTML, and CSS. 
+        Interested in building responsive websites and modern web applications.
+    </p>
+    <a href="profileCardContactDetails.html" class="btn">Contact Me</a>
+</div>
+</body>
+</html>
