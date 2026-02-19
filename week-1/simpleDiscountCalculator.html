@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Discount Calculator</title>
+    <style>
+        body{
+    font-family: Arial;
+    background:#f0f4f8;
+    text-align:center;
+    padding-top:100px;
+}
+
+.box{
+    background:white;
+    width:300px;
+    margin:auto;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+input{
+    padding:10px;
+    width:80%;
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+button{
+    padding:10px 20px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#45a049;
+}
+
+p{
+    font-size:18px;
+    margin-top:10px;
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+    <h2>Discount Calculator</h2>
+
+    <input type="number" id="amount" placeholder="Enter amount">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="discount"></p>
+    <p id="final"></p>
+</div>
+
+    <script src="simpleDiscountCalculator.js"></script>
+</body>
+</html>

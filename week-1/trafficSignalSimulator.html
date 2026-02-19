@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Signal Simulator</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+        background: #f0f0f0;
+    }
+
+    .box {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        width: 300px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    input, button {
+        padding: 10px;
+        margin-top: 10px;
+        width: 80%;
+        font-size: 16px;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+    <div class="box">
+    <h2>Traffic Signal Simulator</h2>
+    <input type="text" id="colorInput" placeholder="Enter color (red/yellow/green)">
+    <br>
+    <button onclick="checkSignal()">Check Signal</button>
+    <div id="result"></div>
+</div>
+
+
+<script src="trafficSignalSimulator.js"></script>
+
+</body>
+</html>
