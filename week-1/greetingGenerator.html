@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Generator</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+input {
+    padding: 10px;
+    width: 200px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+#greetingText {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Greeting Generator</h2>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+    <br><br>
+    <button onclick="generateGreeting()">Generate Greeting</button>
+    
+    <p id="greetingText"></p>
+    </div>
+    <script>
+function generateGreeting() {
+    var name = document.getElementById("nameInput").value;
+    showGreeting(name);
+}
+
+function showGreeting(userName) {
+    var message = "Hello, " + userName + "! Welcome to our website.";
+    document.getElementById("greetingText").innerText = message;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,#ff9a9e,#fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+#counter{
+    font-size:40px;
+    margin:20px 0;
+    color:#333;
+}
+
+button{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.increment{
+    background:#28a745;
+    color:white;
+}
+
+.reset{
+    background:#dc3545;
+    color:white;
+}
+
+button:hover{
+    opacity:0.9;
+}
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Counter App</h1>
+        <div id="counter">0</div>
+        <button id="incBtn" class="increment">Increment</button>
+    <button id="resetBtn" class="reset">Reset</button>
+    </div>
+    <script>
+        var countervalue = 0;
+        function updateDisplay(){
+        document.getElementById("counter").innerText = counterValue;
+}
+
+    function incrementCounter(step){
+    counterValue += step;
+    updateDisplay();
+}
+function resetCounter(){
+    counterValue = 0;
+    updateDisplay();
+}
+
+// Event listeners (no inline JS)
+document.getElementById("incBtn").addEventListener("click", function(){
+    incrementCounter(1);
+});
+
+document.getElementById("resetBtn").addEventListener("click", resetCounter);
+    </script>
+</body>
+</html>
