@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Form Validation</title>
+    <style>
+    body{
+      font-family: Arial;
+      background:#f2f2f2;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+    .box{
+      background:white;
+      padding:20px;
+      border-radius:10px;
+      width:300px;
+      box-shadow:0 0 10px rgba(0,0,0,0.2);
+    }
+    input{
+      width:90%;
+      padding:8px;
+      margin:8px 0;
+    }
+    button{
+      width:100%;
+      padding:10px;
+      background:#4CAF50;
+      color:white;
+      border:none;
+      cursor:pointer;
+    }
+    .msg{
+      font-size:14px;
+      margin-top:5px;
+    }
+    .error{ color:red; }
+    .success{ color:green; }
+  </style>
+</head>
+<body>
+    <div class="box">
+  <h3>Register</h3>
+
+  Name:
+  <input type="text" id="name" onchange="validateName()">
+  <div id="nameMsg" class="msg"></div>
+
+  Email:
+  <input type="text" id="email" onchange="validateEmail()">
+  <div id="emailMsg" class="msg"></div>
+
+  Age:
+  <input type="number" id="age" onchange="validateAge()">
+  <div id="ageMsg" class="msg"></div>
+
+  <button onclick="saveData()">Submit</button>
+  <div id="finalMsg" class="msg"></div>
+</div>
+<Script>
+function validateName(){
+  let name=document.getElementById("name").value;
+  let msg=document.getElementById("nameMsg");
+
+  if(name.trim()===""){
+    msg.textContent="Name cannot be empty";
+    msg.className="msg error";
+    return false;
+  }
+  else{
+    msg.textContent="Valid name";
+    msg.className="msg success";
+    return true;
+  }
+}
+function validateEmail(){
+  let email=document.getElementById("email").value;
+  let msg=document.getElementById("emailMsg");
+
+  if(!email.includes("@")){
+    msg.textContent="Email must contain @";
+    msg.className="msg error";
+    return false;
+  }
+  else{
+    msg.textContent="Valid email";
+    msg.className="msg success";
+    return true;
+  }
+}
+
+function validateAge(){
+  let age=document.getElementById("age").value;
+  let msg=document.getElementById("ageMsg");
+
+  if(age<=18 || age===""){
+    msg.textContent="Age must be greater than 18";
+    msg.className="msg error";
+    return false;
+  }
+  else{
+    msg.textContent="Valid age";
+    msg.className="msg success";
+    return true;
+  }
+}
+
+function saveData(){
+  if(validateName() && validateEmail() && validateAge()){
+
+    sessionStorage.setItem("Name",name.value);
+    sessionStorage.setItem("Email",email.value);
+    sessionStorage.setItem("Age",age.value);
+
+    document.getElementById("finalMsg").textContent="Data saved successfully!";
+    document.getElementById("finalMsg").className="msg success";
+
+    // ✅ RESET FORM
+    document.getElementById("myForm").reset();
+
+    // optional: clear validation messages
+    document.getElementById("nameMsg").textContent="";
+    document.getElementById("emailMsg").textContent="";
+    document.getElementById("ageMsg").textContent="";
+  }
+  else{
+    document.getElementById("finalMsg").textContent="Please fix errors before submitting.";
+    document.getElementById("finalMsg").className="msg error";
+  }
+}
+function saveData(){
+  if(validateName() && validateEmail() && validateAge()){
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let age = document.getElementById("age").value;
+
+    sessionStorage.setItem("Name", name);
+    sessionStorage.setItem("Email", email);
+    sessionStorage.setItem("Age", age);
+
+    document.getElementById("finalMsg").textContent="Data saved successfully!";
+    document.getElementById("finalMsg").className="msg success";
+
+    // ✅ reset form
+    document.getElementById("myForm").reset();
+
+    // clear messages
+    document.getElementById("nameMsg").textContent="";
+    document.getElementById("emailMsg").textContent="";
+    document.getElementById("ageMsg").textContent="";
+  }
+  else{
+    document.getElementById("finalMsg").textContent="Please fix errors before submitting.";
+    document.getElementById("finalMsg").className="msg error";
+  }
+}
+</script>
+</body>
+</html>
