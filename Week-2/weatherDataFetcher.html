@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data Fetcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        #weatherResult {
+            margin-top: 20px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .loading {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h2>Weather Data Fetcher</h2>
+
+    <input type="text" id="city" placeholder="Enter City Name">
+    <br>
+    <button onclick="getWeather()">Get Weather</button>
+
+    <div id="weatherResult"></div>
+</div>
+<script>
+
+    // 🔑 Replace with your real API key
+    const apiKey = "ce5bf04dc34c2bb67da28b9a13503bb8";
+
+    // 📌 Display Weather Function (Arrow Function)
+    const displayWeather = (data) => {
+        const resultDiv = document.getElementById("weatherResult");
+
+        resultDiv.innerHTML = `
+            <h3>${data.name}, ${data.sys.country}</h3>
+            <p><strong>Temperature:</strong> ${data.main.temp} °C</p>
+            <p><strong>Weather:</strong> ${data.weather[0].description}</p>
+            <p><strong>Humidity:</strong> ${data.main.humidity}%</p>
+            <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
+        `;
+    };
+
+    // 🌤 Async/Await Version with Proper Error Handling
+    const getWeather = async () => {
+
+        const cityInput = document.getElementById("city");
+        const resultDiv = document.getElementById("weatherResult");
+
+        const city = cityInput.value.trim();
+
+        if (!city) {
+            resultDiv.innerHTML = `<p class="error">Please enter a city name.</p>`;
+            return;
+        }
+
+        try {
+
+            resultDiv.innerHTML = `<p class="loading">Loading...</p>`;
+
+            const response = await fetch(
+                `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+);
+
+            const data = await response.json();
+
+            if (response.status !== 200) {
+                throw new Error(data.message);
+            }
+
+            displayWeather(data);
+
+        } catch (error) {
+            resultDiv.innerHTML = `
+                <p class="error">
+                    Error: ${error.message}
+                </p>
+            `;
+        }
+    };
+
+</script>
+
+</body>
+</html>

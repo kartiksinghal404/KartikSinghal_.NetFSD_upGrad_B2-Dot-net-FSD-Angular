@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+</head>
+<body>
+    <h2>Task Manager Console Demo</h2>
+    <button onclick="runCallback()">Run Callback Version</button> <br><br>
+    <button onclick="runPromise()">Run Promise Version</button> <br><br>
+    <button onclick="runAsync()">Run Async/Await Version</button>
+
+    <script type="module">
+        import {
+            runCallbackVersion,
+            runPromiseVersion,
+            runAsyncAwaitVersion
+        } from './taskManager.js';
+
+        window.runCallback = runCallbackVersion;
+        window.runPromise = runPromiseVersion;
+        window.runAsync = runAsyncAwaitVersion;
+    </script>
+</body>
+</html>
