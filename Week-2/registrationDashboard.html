@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Dashboard</title>
+     <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+    
+    <div class="row g-4">
+        
+        <!-- LEFT SIDE - REGISTRATION FORM -->
+        <div class="col-12 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h4 class="mb-4 text-center">Student Registration</h4>
+
+                    <form id="registrationForm">
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Course</label>
+                            <input type="text" class="form-control" id="course" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="contact" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Register
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE - RESPONSIVE TABLE -->
+        <div class="col-12 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h4 class="mb-4 text-center">Registered Students</h4>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover align-middle">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Course</th>
+                                    <th>Email</th>
+                                    <th>Contact</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentTable">
+                                <!-- Dynamic Data Will Appear Here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const form = document.getElementById("registrationForm");
+    const table = document.getElementById("studentTable");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const course = document.getElementById("course").value;
+        const email = document.getElementById("email").value;
+        const contact = document.getElementById("contact").value;
+
+        const newRow = `
+            <tr>
+                <td>${name}</td>
+                <td>${course}</td>
+                <td>${email}</td>
+                <td>${contact}</td>
+            </tr>
+        `;
+
+        table.innerHTML += newRow;
+
+        form.reset();
+    });
+</script>
+</body>
+</html>
