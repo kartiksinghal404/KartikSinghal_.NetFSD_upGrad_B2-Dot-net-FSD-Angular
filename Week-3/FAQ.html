@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic FAQ Toggle Section</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .faq-container {
+            width: 60%;
+            margin: 50px auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            background-color: #e9ecef;
+            transition: 0.3s;
+        }
+
+        .faq-question.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .faq-answer {
+            padding: 15px;
+            display: none;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+
+    <div class="faq-item">
+        <div class="faq-question">1. What is HTML?</div>
+        <div class="faq-answer">
+            HTML is the standard markup language used to create web pages.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">2. What is CSS?</div>
+        <div class="faq-answer">
+            CSS is used to style and design web pages.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">3. What is JavaScript?</div>
+        <div class="faq-answer">
+            JavaScript is a programming language used to make web pages interactive.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">4. What is jQuery?</div>
+        <div class="faq-answer">
+            jQuery is a fast and lightweight JavaScript library for DOM manipulation.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">5. What is Bootstrap?</div>
+        <div class="faq-answer">
+            Bootstrap is a CSS framework used to build responsive websites quickly.
+        </div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function() {
+
+        $(".faq-question").click(function() {
+
+            // Toggle current answer smoothly
+            $(this).next(".faq-answer").slideToggle(300);
+
+            // Toggle active class for highlight
+            $(this).toggleClass("active");
+
+        });
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .cart {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .success {
+            color: green;
+            font-size: 14px;
+            display: block;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+    <h2>My Store</h2>
+    <div class="cart">
+        Cart Items: <span id="cart-count">0</span>
+    </div>
+</div>
+
+<div class="products">
+
+    <div class="product">
+        <img src="wireless-headphone.webp" alt="Headphones">
+        <h4>Wireless Headphones</h4>
+        <p>Price: ₹3500</p>
+        <button class="add-to-cart" data-id="1">Add to Cart</button>
+        <span class="message"></span>
+    </div>
+
+    <div class="product">
+        <img src="smartwatch.jpg" alt="Smartwatch">
+        <h4>Smart Watch</h4>
+        <p>Price: ₹4000</p>
+        <button class="add-to-cart" data-id="2">Add to Cart</button>
+        <span class="message"></span>
+    </div>
+
+    <div class="product">
+        <img src="Laptop.jpg" alt="Laptop">
+        <h4>Laptop</h4>
+        <p>Price: ₹60000</p>
+        <button class="add-to-cart" data-id="3">Add to Cart</button>
+        <span class="message"></span>
+    </div>
+
+    <div class="product">
+        <img src="Smartphone.jpg" alt="Mobile">
+        <h4>Smartphone</h4>
+        <p>Price: ₹25000</p>
+        <button class="add-to-cart" data-id="4">Add to Cart</button>
+        <span class="message"></span>
+    </div>
+
+</div>
+<script>
+$(document).ready(function () {
+
+    let count = 0;
+
+    // Event Delegation
+    $(".products").on("click", ".add-to-cart", function () {
+
+        count++;
+        $("#cart-count").text(count); // .text()
+
+        $(this).prop("disabled", true); // .prop()
+        $(this).text("Added");
+
+        $(this).attr("data-added", "true"); // .attr()
+
+        $(this).siblings(".message")
+               .text("✔ Added to cart")
+               .addClass("success");
+    });
+
+});
+</script>
+</body>
+</html>

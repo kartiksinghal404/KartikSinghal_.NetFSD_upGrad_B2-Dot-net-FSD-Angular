@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Interaction</title>
+     <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .success {
+            color: green;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h2>Student Feedback Form</h2>
+
+    <form id="feedbackForm">
+        <label>Name:</label>
+        <input type="text" id="name">
+
+        <label>Email:</label>
+        <input type="email" id="email">
+
+        <label>Course Rating:</label>
+        <select id="rating">
+            <option value="">Select Rating</option>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+        </select>
+
+        <label>Comments:</label>
+        <textarea id="comments"></textarea>
+
+        <button type="button" id="submitBtn">Submit</button>
+    </form>
+
+    <div id="message"></div>
+</div>
+
+
+    <script>
+$(document).ready(function(){
+
+    $("#submitBtn").click(function(){
+
+        // Get values using jQuery selectors
+        var name = $("#name").val().trim();
+        var email = $("#email").val().trim();
+
+        // Clear previous message
+        $("#message").html("");
+
+        // Validation
+        if(name === "" || email === "") {
+            $("#message").html("<div class='error'>Please enter both Name and Email.</div>");
+        } 
+        else {
+            // Success message using DOM manipulation
+            $("#message").html("<div class='success'>Thank you, " + name + "! Your feedback has been submitted successfully.</div>");
+
+            // Clear form fields
+            $("#feedbackForm")[0].reset();
+        }
+
+    });
+
+});
+</script>
+</body>
+</html>
