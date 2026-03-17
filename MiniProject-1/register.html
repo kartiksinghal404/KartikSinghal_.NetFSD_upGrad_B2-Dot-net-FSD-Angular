@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Register Event</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body{
+background:#f5f6f7;
+font-family: Arial;
+}
+
+/* HERO */
+
+.hero{
+padding:60px;
+}
+
+.hero-img{
+width:100%;
+max-width:700px;
+margin-top:20px;
+border-radius:10px;
+}
+
+/* CARDS */
+
+.card{
+border-radius:10px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card img{
+height:200px;
+object-fit:cover;
+}
+
+/* LOGIN IMAGE */
+
+.login-img{
+width:100%;
+border-radius:10px;
+margin-bottom:20px;
+}
+
+/* BANNER */
+
+.banner-img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:20px;
+}
+
+/* CONTACT IMAGE */
+
+.contact-img{
+width:100%;
+border-radius:10px;
+margin-bottom:20px;
+}
+
+/* FOOTER */
+
+.footer{
+background:#212529;
+color:white;
+padding:40px;
+}
+
+.footer a{
+color:#ddd;
+text-decoration:none;
+}
+
+.footer a:hover{
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container mt-5" style="max-width:500px">
+
+<h3>Event Registration</h3>
+
+<form onsubmit="registerEvent(event)">
+
+<div class="mb-3">
+<label>First Name</label>
+<input type="text" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Last Name</label>
+<input type="text" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Email</label>
+<input type="email" class="form-control" required>
+</div>
+
+<button class="btn btn-primary">Register</button>
+
+</form>
+
+</div>
+
+<script src="js/app.js"></script>
+<!-- FOOTER -->
+
+<footer class="footer mt-5">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-4">
+
+<h5>Upgrad Events</h5>
+
+<p>Virtual events for learning and networking.</p>
+
+</div>
+
+
+<div class="col-md-4">
+
+<h5>Quick Links</h5>
+
+<ul class="list-unstyled">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="login.html">Login</a></li>
+
+<li><a href="events.html">Events</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+
+<div class="col-md-4">
+
+<h5>Contact</h5>
+
+<p>Email: support@upgrad.com</p>
+
+<p>Phone: +91 8791605466</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="text-center">&copy; 2026 Upgrad Events</p>
+
+</div>
+
+</footer>
+</body>
+</html>
